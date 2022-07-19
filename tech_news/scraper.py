@@ -21,18 +21,16 @@ def fetch(url):
 # Requisito 2
 def scrape_novidades(html_content):
     """Seu código deve vir aqui"""
-    url_list = list()
     selector = Selector(text=html_content)
-    for item in selector.css('article'):
-        url = item.css(".cs-overlay-link::attr(href)").get()
-        if url:
-            url_list.append(url)
-    return url_list
+    url = selector.css(".cs-overlay-link::attr(href)").getall()
+
+    return url
 
 
 # Requisito 3
 def scrape_next_page_link(html_content):
     """Seu código deve vir aqui"""
+    return html_content
 
 
 # Requisito 4
