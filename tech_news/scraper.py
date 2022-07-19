@@ -16,10 +16,6 @@ def fetch(url):
         return None
 
 
-result = fetch("https://app.betrybe.com/")
-print(result)
-
-
 # Requisito 2
 def scrape_novidades(html_content):
     """Seu código deve vir aqui"""
