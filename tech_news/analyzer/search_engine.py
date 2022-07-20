@@ -42,3 +42,9 @@ def search_by_tag(tag):
 # Requisito 9
 def search_by_category(category):
     """Seu código deve vir aqui"""
+    category_search = search_news({
+        "category": {"$regex": f"{category.lower().capitalize()}"}})
+
+    news = [(news["title"], news["url"]) for news in category_search]
+
+    return news
